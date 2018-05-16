@@ -69,11 +69,14 @@ class Album extends Component {
              onClick={() => this.handleSongClick(song)}
              >
                <td className="song-actions">
-                 <button>
-                   <span className="song-number">{index+1}</span>
-                   <span className="ion-play" onMouseEnter={this.play}></span>
-                   <span className="ion-pause" onMouseLeave={this.pause}></span>
-                 </button>
+               <button
+                 className="song-number"
+                 onMouseEnter={(e) => { e.target.className = "ion-md-play"}}
+                 onMouseLeave={(e) => { e.target.className = "song-number"}}
+                 onClick={(e) => <span className={this.props.isPlaying ? "ion-md-pause" : "ion-md-play"}></span>}
+               >
+               {index+1}
+               </button>
                </td>
                <td className="song-title">{song.title}</td>
                <td className="song-duration">{song.duration}</td>
