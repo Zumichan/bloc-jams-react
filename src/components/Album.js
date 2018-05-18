@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import albumData from './../data/albums'
+import albumData from './../data/albums';
 
 class Album extends Component {
   constructor(props) {
@@ -45,6 +45,22 @@ class Album extends Component {
     }
   }
 
+  mouseEnter(e) {
+    e.target.className = "ion-md-play"
+  }
+
+  mouseLeave(e) {
+    e.target.className = "song-number"
+  }
+
+  playPause(e){
+    if (this.state.isPlaying){
+      e.target.className = "ion-md-play"
+    } else {
+      e.target.className="ion-md-pause"
+    }
+  }
+
   render() {
     return(
       <section className="album">
@@ -65,13 +81,18 @@ class Album extends Component {
            <tbody>
            {
              this.state.album.songs.map( (song, index) =>
-             <tr className="song" key={index} onClick={() => this.handleSongClick(song)} >
+             <tr className="song" key={index}
+             onClick={() => this.handleSongClick(song)}
+             >
                <td className="song-actions">
-                 <button>
-                   <span className="song-number">{index+1}</span>
-                   <span className="ion-play"></span>
-                   <span className="ion-pause"></span>
-                 </button>
+               <button
+                 className="song-number"
+                 onMouseEnter={(e) => this.mouseEnter(e)}
+                 onMouseLeave={(e) => this.mouseLeave(e)}
+                 onClick={(e) => this.playPause(e)}
+               >
+                  {index+1}
+               </button>
                </td>
                <td className="song-title">{song.title}</td>
                <td className="song-duration">{song.duration}</td>
