@@ -45,6 +45,22 @@ class Album extends Component {
     }
   }
 
+  mouseEnter(e) {
+    e.target.className = "ion-md-play"
+  }
+
+  mouseLeave(e) {
+    e.target.className = "song-number"
+  }
+
+  playPause(e){
+    if (this.state.isPlaying){
+      e.target.className = "ion-md-play"
+    } else {
+      e.target.className="ion-md-pause"
+    }
+  }
+
   render() {
     return(
       <section className="album">
@@ -71,11 +87,11 @@ class Album extends Component {
                <td className="song-actions">
                <button
                  className="song-number"
-                 onMouseEnter={(e) => { e.target.className = "ion-md-play"}}
-                 onMouseLeave={(e) => { e.target.className = "song-number"}}
-                 onClick={(e) => <span className={this.props.isPlaying ? "ion-md-pause" : "ion-md-play"}></span>}
+                 onMouseEnter={(e) => this.mouseEnter(e)}
+                 onMouseLeave={(e) => this.mouseLeave(e)}
+                 onClick={(e) => this.playPause(e)}
                >
-               {index+1}
+                  {index+1}
                </button>
                </td>
                <td className="song-title">{song.title}</td>
