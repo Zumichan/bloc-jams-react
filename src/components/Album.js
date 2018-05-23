@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
+import PlayerBar from './PlayerBar';
 
 class Album extends Component {
   constructor(props) {
@@ -45,20 +46,12 @@ class Album extends Component {
     }
   }
 
-  mouseEnter(e) {
-    e.target.className = "ion-md-play"
-  }
-
-  mouseLeave(e) {
-    e.target.className = "song-number"
-  }
-
-  playPause(e){
-    if (this.state.isPlaying){
-      e.target.className = "ion-md-play"
-    } else {
-      e.target.className="ion-md-pause"
-    }
+  handlePrevClick() {
+    const currentIndex = this.state.album.songs.findIndex(song => this.state.currentSong === song);
+    const newIndex = Math.max(0, currentIndex - 1);
+    const newSong = this.state.album.songs[newIndex];
+    this.setSong(newSong);
+    this.play();
   }
 
   render() {
@@ -85,14 +78,11 @@ class Album extends Component {
              onClick={() => this.handleSongClick(song)}
              >
                <td className="song-actions">
-               <button
-                 className="song-number"
-                 onMouseEnter={(e) => this.mouseEnter(e)}
-                 onMouseLeave={(e) => this.mouseLeave(e)}
-                 onClick={(e) => this.playPause(e)}
-               >
-                  {index+1}
-               </button>
+                 <button>
+                   <span className="song-number">{index+1}</span>
+                   <span className="ion-md-play"></span>
+                   <span className="ion-md-pause"></span>
+                 </button>
                </td>
                <td className="song-title">{song.title}</td>
                <td className="song-duration">{song.duration}</td>
@@ -101,6 +91,12 @@ class Album extends Component {
            }
            </tbody>
          </table>
+         <PlayerBar
+           isPlaying={this.state.isPlaying}
+           currentSong={this.state.currentSong}
+           handleSongClick={() => this.handleSongClick(this.state.currentSong)}
+           handlePrevClick={() => this.handlePrevClick()}
+         />
        </section>
     );
   }
