@@ -91,32 +91,32 @@ class Album extends Component {
   }
 
   handleTimeChange(e) {
-     const newTime = this.audioElement.duration * e.target.value;
-     this.audioElement.currentTime = newTime;
-     this.setState({ currentTime: newTime });
-   }
+    const newTime = this.audioElement.duration * e.target.value;
+    this.audioElement.currentTime = newTime;
+    this.setState({ currentTime: newTime });
+  }
 
-   formatTime(time){
-     if(isNaN(time)){
-       return "-:--";
-     } else {
-         let minutes = Math.floor(time / 60);
-         let seconds = Math.floor(time % 60);
-         if (seconds < 10) {
-           seconds = Math.floor(seconds.toString());
-           return minutes +" :0"+seconds;
-         } else {
-         seconds = Math.floor(seconds.toString());
-         return minutes + ":" + seconds;
-          }
-       }
+  handleVolumeChange(e){
+    const newVolume = e.target.value;
+    this.audioElement.volume = newVolume;
+    this.setState({ currentVolume: newVolume});
+  }
+
+  formatTime(time){
+    if(isNaN(time)){
+      return "-:--";
+    } else {
+        let minutes = Math.floor(time / 60);
+        let seconds = Math.floor(time % 60);
+        if (seconds < 10) {
+          seconds = Math.floor(seconds.toString());
+          return minutes +" :0"+seconds;
+        } else {
+        seconds = Math.floor(seconds.toString());
+        return minutes + ":" + seconds;
+        }
     }
-
-   handleVolumeChange(e){
-     const newVolume = this.audioElement.volume * e.target.value;
-     this.audioElement.volume = newVolume;
-     this.setState({ currentVolume: newVolume});
-   }
+  }
 
   render() {
     return(
