@@ -33,33 +33,45 @@ class Album extends Component {
     this.setState({ currentSong: song });
   }
 
+  /*If the current song is playing, pause the song when the button is clicked
+    Change the icon to play
+    If it's not a current song, show a song number
+    If the song is not playing, play the song when the button is clicked
+    Change the icon to pause
+    How can I change the className which is in the render section?
+  */
   handleSongClick(song){
     const isSameSong = this.state.currentSong === song;
     if (this.state.isPlaying && isSameSong){
       this.pause();
+      button.className = "ion-md-play"
     } else {
       if (!isSameSong){
         this.setSong(song);
+        button.className = "song-number"
       }
       this.play();
+      button.className = "ion-md-pause"
     }
   }
 
-
-    /*If the song is playing, show pause icon
-      If the song is not playing, show play icon */
-  mouseEnter(e) {
-    if(this.state.isPlaying){
-      e.target.className = "ion-md-pause"
-    }else {
-      e.target.className = "ion-md-play"
+  /*If the current song is playing, show pause icon
+    If the song is not playing, show play icon
+    How can I change the className which is in the render section?
+  */
+  mouseEnter(song) {
+    const isSameSong = this.state.currentSong === song;
+    if(this.state.isPlaying && isSameSong){
+      button.className = "ion-md-pause"
+    } else {
+      button.className = "ion-md-play"
     }
   }
 
-    /* If the song is not playing, show index number*/
-  mouseLeave(e) {
+  /* If the song is not playing, show index number*/
+  mouseLeave(song) {
     if(!this.state.isPlaying){
-    e.target.className = "song-number"
+    button.className = "song-number"
   }
 }
 
@@ -85,14 +97,11 @@ class Album extends Component {
              this.state.album.songs.map( (song, index) =>
              <tr className="song" key={index}
              onClick={() => this.handleSongClick(song)}
+             onMouseEnter={() => this.mouseEnter(song)}
+             onMouseLeave={() => this.mouseLeave(song)}
              >
                <td className="song-actions">
-               <button
-                 className="song-number"
-                 onMouseEnter={() => this.mouseEnter(e)}
-                 onMouseLeave={() => this.mouseLeave(e)}
-                 onClick={() => this.handleSongClick(song)}
-               >
+               <button className="song-number">
                   {index+1}
                </button>
                </td>
