@@ -45,21 +45,23 @@ class Album extends Component {
     }
   }
 
+
+    /*If the song is playing, show pause icon
+      If the song is not playing, show play icon */
   mouseEnter(e) {
-    e.target.className = "ion-md-play"
-  }
-
-  mouseLeave(e) {
-    e.target.className = "song-number"
-  }
-
-  playPause(e){
-    if (this.state.isPlaying){
+    if(this.state.isPlaying){
+      e.target.className = "ion-md-pause"
+    }else {
       e.target.className = "ion-md-play"
-    } else {
-      e.target.className="ion-md-pause"
     }
   }
+
+    /* If the song is not playing, show index number*/
+  mouseLeave(e) {
+    if(!this.state.isPlaying){
+    e.target.className = "song-number"
+  }
+}
 
   render() {
     return(
@@ -87,9 +89,9 @@ class Album extends Component {
                <td className="song-actions">
                <button
                  className="song-number"
-                 onMouseEnter={(e) => this.mouseEnter(e)}
-                 onMouseLeave={(e) => this.mouseLeave(e)}
-                 onClick={(e) => this.playPause(e)}
+                 onMouseEnter={() => this.mouseEnter(e)}
+                 onMouseLeave={() => this.mouseLeave(e)}
+                 onClick={() => this.handleSongClick(song)}
                >
                   {index+1}
                </button>
