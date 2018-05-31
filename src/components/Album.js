@@ -99,9 +99,18 @@ class Album extends Component {
    formatTime(time){
      if(isNaN(time)){
        return "-:--";
-     }
-     let minutes = Math.floor(time/60)
-   }
+     } else {
+         let minutes = Math.floor(time / 60);
+         let seconds = Math.floor(time % 60);
+         if (seconds < 10) {
+           seconds = Math.floor(seconds.toString());
+           return minutes +" :0"+seconds;
+         } else {
+         seconds = Math.floor(seconds.toString());
+         return minutes + ":" + seconds;
+          }
+       }
+    }
 
    handleVolumeChange(e){
      const newVolume = this.audioElement.volume * e.target.value;
@@ -109,56 +118,6 @@ class Album extends Component {
      this.setState({ currentVolume: newVolume});
    }
 
-   formatTime(seconds) {
-
-      const wholeSeconds = Math.floor(seconds);
-      const minutes = Math.floor(wholeSeconds / 60);
-
-      const remainingSeconds = wholeSeconds % 60;
-      let output = minutes + ':';
-      if (remainingSeconds < 10) {
-        output += '0';
-      }
-      output += remainingSeconds;
-      return output;
-    }
-
-    formatTime(time) {
-
-        var minutes = Math.floor(time / 60);
-        var seconds = time - minutes * 60;
-        minutes = minutes.toString();
-         if (seconds < 10) {
-          seconds = Math.floor(seconds.toString());
-          return minutes + ":0" + seconds;
-        } else {
-          seconds = Math.floor(seconds.toString());
-          return minutes + ":" + seconds;
-        }
-      }
-
-      formatTime(time){
-            if (time){
-                const newTime = Math.floor(time / 60) + ':' + (((time%60) < 10) ? ('0' + (Math.floor(time % 60))) : (Math.floor(time % 60)));
-               return newTime;
-            } else {
-                return"-:--";
-            }
-        }
-
-        formatTime(time) {
-
-        	else {
-        	  let minutes = Math.floor(time / 60);
-        	  let seconds = Math.floor(time % 60);
-        	  if (seconds < 10) {
-        	  	seconds = "0" + seconds;
-        	  }
-        	  let formattedTime = String(minutes)+":"+String(seconds);
-        	  return formattedTime;
-        	}
-        }
-        
   render() {
     return(
       <section className="album">
