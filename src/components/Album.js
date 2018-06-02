@@ -12,7 +12,8 @@ class Album extends Component {
     this.state = {
       album: album,
       currentSong: album.songs[0],
-      isPlaying: false
+      isPlaying: false,
+      isHovered: false
     };
     this.audioElement = document.createElement('audio');
     this.audioElement.src = album.songs[0].audioSrc;
@@ -33,47 +34,17 @@ class Album extends Component {
     this.setState({ currentSong: song });
   }
 
-  /*If the current song is playing, pause the song when the button is clicked
-    Change the icon to play
-    If it's not a current song, show a song number
-    If the song is not playing, play the song when the button is clicked
-    Change the icon to pause
-    How can I change the className which is in the render section?
-  */
   handleSongClick(song){
     const isSameSong = this.state.currentSong === song;
     if (this.state.isPlaying && isSameSong){
       this.pause();
-      button.className = "ion-md-play"
     } else {
       if (!isSameSong){
         this.setSong(song);
-        button.className = "song-number"
       }
       this.play();
-      button.className = "ion-md-pause"
     }
   }
-
-  /*If the current song is playing, show pause icon
-    If the song is not playing, show play icon
-    How can I change the className which is in the render section?
-  */
-  mouseEnter(song) {
-    const isSameSong = this.state.currentSong === song;
-    if(this.state.isPlaying && isSameSong){
-      button.className = "ion-md-pause"
-    } else {
-      button.className = "ion-md-play"
-    }
-  }
-
-  /* If the song is not playing, show index number*/
-  mouseLeave(song) {
-    if(!this.state.isPlaying){
-    button.className = "song-number"
-  }
-}
 
   render() {
     return(
@@ -97,12 +68,20 @@ class Album extends Component {
              this.state.album.songs.map( (song, index) =>
              <tr className="song" key={index}
              onClick={() => this.handleSongClick(song)}
-             onMouseEnter={() => this.mouseEnter(song)}
-             onMouseLeave={() => this.mouseLeave(song)}
+             onMouseEnter={() => this.setState({isHovered: index+1}) }
+             onMouseLeave={() => this.setState({isHovered: false})}
              >
                <td className="song-actions">
                <button className="song-number">
-                  {index+1}
+                  {
+                    (this.state.currentSong.title === song.title) ?
+                    <span className={this.state.isPlaying ? "ion-md-pause" : "ion-md-play"}></span>
+                    :
+                    (this.state.isHovered === index+1) ?
+                    <span className="ion-md-play"></span>
+                    :
+                    <span className="song-number">{index+1}</span>
+                  }
                </button>
                </td>
                <td className="song-title">{song.title}</td>
