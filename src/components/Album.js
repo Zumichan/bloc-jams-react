@@ -110,7 +110,7 @@ class Album extends Component {
         let seconds = Math.floor(time % 60);
         if (seconds < 10) {
           seconds = Math.floor(seconds.toString());
-          return minutes +" :0"+seconds;
+          return minutes + ":0" +seconds;
         } else {
         seconds = Math.floor(seconds.toString());
         return minutes + ":" + seconds;
@@ -149,7 +149,7 @@ class Album extends Component {
                  </button>
                </td>
                <td className="song-title">{song.title}</td>
-               <td className="song-duration">{song.duration}</td>
+               <td className="song-duration">{this.formatTime(song.duration)}</td>
               </tr>
              )
            }
