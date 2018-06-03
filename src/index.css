@@ -4,14 +4,14 @@ body {
   font-family: sans-serif;
 }
 
-.ion-md-play{
+.ion-md-play {
   display: none;
 }
 
 .ion-md-play:hover {
-  display: block;
+  display: none;
 }
 
-.ion-md-pause{
+.ion-md-pause {
   display: none;
 }
