@@ -9,7 +9,7 @@ body {
 }
 
 .ion-md-play:hover {
-  display: none;
+  display: block;
 }
 
 .ion-md-pause {
