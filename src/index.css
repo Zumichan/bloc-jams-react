@@ -3,3 +3,15 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.ion-md-play{
+  display: none;
+}
+
+.ion-md-play:hover {
+  display: block;
+}
+
+.ion-md-pause{
+  display: none;
+}
