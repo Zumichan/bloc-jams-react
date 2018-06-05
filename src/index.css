@@ -12,6 +12,10 @@ body {
   display: block;
 }
 
+.song-number:hover {
+  display: none;
+}
+
 .ion-md-pause {
   display: none;
 }
