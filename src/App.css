@@ -1,28 +1,96 @@
-.App {
+/*.App {
+  text-align: center;
+}*/
+
+/* App.js */
+.App-header {
+  background-color: #222;
+  height: 250px;
+  padding: 20px;
+  color: #42eef4;
+  position: center;
+}
+
+.navbar-link {
+  float: left;
+  mergin-left: 1rem;
+
+}
+
+body {
+  background: black;
+}
+
+h1 {
+  text-align: center;
+  padding-top: 30px;
+}
+
+
+/* Landing.js */
+
+.hero-title {
+  position: center;
+  mergin-top: 50%;
+  mergin-left: 50%;
+  font-size: 50px;
+  color: #fff;
+}
+
+.selling-points{
+  color: #fff;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.point{
+  display: inline-block;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.point-title{
+  font-size: 25px;
+  padding-bottom: 20px;
+}
+
+/* Library.js */
+
+.library {
+  width: 90%;
+  margin: auto;
+  padding: 10px;
+}
+
+.album-link {
+  color: #fff;
+  display: inline-block;
+  mergin: 5px;
+  padding: 10px;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+/* Album.js */
+
+#album-cover-art {
+  display: left;
+  position: relative;
+  padding: 10px;
+  height: auto;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+#album-info {
+  position: right;
 }
 
-.App-title {
-  font-size: 1.5em;
+h1#album-title {
+  text-align: right;
 }
 
-.App-intro {
-  font-size: large;
+h2.artist {
+  text-align: right;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+div#release-info{
+  text-align: right;
 }
