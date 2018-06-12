@@ -78,19 +78,3 @@ h1 {
   padding: 10px;
   height: auto;
 }
-
-#album-info {
-  position: right;
-}
-
-h1#album-title {
-  text-align: right;
-}
-
-h2.artist {
-  text-align: right;
-}
-
-div#release-info{
-  text-align: right;
-}
