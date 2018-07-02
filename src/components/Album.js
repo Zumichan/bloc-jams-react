@@ -130,7 +130,7 @@ class Album extends Component {
              <h2 className="artist">{this.state.album.artist}</h2>
              <div id="release-info">{this.state.album.releaseInfo}</div>
            </div>
-         </section>
+
          <table id="song-list">
            <colgroup>
              <col id="song-number-column" />
@@ -163,6 +163,7 @@ class Album extends Component {
            }
            </tbody>
          </table>
+          </section>
    </section>
          <PlayerBar
            isPlaying={this.state.isPlaying}
