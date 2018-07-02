@@ -65,16 +65,129 @@ h1 {
 .album-link {
   color: #fff;
   display: inline-block;
-  mergin: 5px;
+  margin: 5px;
   padding: 10px;
   text-align: center;
 }
 
 /* Album.js */
 
-#album-cover-art {
-  display: left;
-  position: relative;
+.album {
+  white-space: nowrap;
+  overflow: scroll;
+}
+
+.album-details {
+  color: #fff;
+  text-align: left;
+}
+
+.song {
+  line-height: 3rem;
+  cursor: pointer;
+}
+
+.song:hover {
+  background: #42eef4;
+}
+
+.song-actions {
+  width: 3rem;
+  cursor: pointer;
+}
+
+.song-duration {
+  width: 3rem;
+}
+
+#song-list {
+  width: 65%;
+  margin: auto;
   padding: 10px;
+  vertical-align: top;
+  color: #fff;
+}
+
+.artist,#release-info {
+  color: #bdbdbd;
+  font-weight: 400;
+  margin: 0.5rem;
+}
+
+#album-cover-art {
+  display: inline-block;
+  position: relative;
+  width: 40%;
   height: auto;
+}
+
+#container-right {
+  display: inline-block;
+  width: fit-content;
+  padding: 5rem 5rem 0 5rem;
+}
+
+/* Player Bar */
+
+input[type=range] {
+  display: inline-block;
+  background: transparent;
+}
+
+.player-bar {
+  color: white;
+  background: #42eef4;
+  position: fixed;
+  text-align: center;
+  left: 0;
+  bottom: 0;
+  height: 8rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+#buttons {
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+.seek-bar {
+  width: 50vw;
+  vertical-align: 0.15rem;
+}
+
+.current-time {
+  display: inline-block;
+  padding-right: 0.5rem;
+}
+
+.total-time {
+  display: inline-block;
+  padding-left: 0.5rem;
+}
+
+.volume-bar {
+  vertical-align: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.icon {
+  display: inline-block;
+  padding-right: 0.5rem;
+  font-size: 1.6rem;
+}
+
+#time-control {
+  display: inline-block;
+  width: fit-content;
+  margin: 0;
+  padding: 0;
+}
+
+#volume-control {
+  display: inline-block;
+  position: fixed;
+  width: fit-content;
+  height: 1rem;
+  right: 0;
 }
