@@ -5,16 +5,15 @@
 /* App.js */
 .App-header {
   background-color: #222;
-  height: 100px;
-  padding: 20px;
+  height: 50px;
+  padding: 5px;
   color: #42eef4;
   position: center;
 }
 
 .navbar-link {
-  float: left;
   mergin-left: 1rem;
-
+  float: right;
 }
 
 body {
@@ -22,19 +21,20 @@ body {
 }
 
 h1 {
-  text-align: center;
-  padding-top: 30px;
+  text-align: left;
+  padding-top: 5px;
+  font-size: 25px;
+  display: inline-block;
 }
 
 
 /* Landing.js */
 
-.hero-title {
-  position: center;
-  mergin-top: 50%;
-  mergin-left: 50%;
+h1.hero-title {
+  text-align: center;
   font-size: 50px;
   color: #fff;
+  padding-left:150px;
 }
 
 .selling-points{
