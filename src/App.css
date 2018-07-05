@@ -1,89 +1,72 @@
-/*.App {
-  text-align: center;
-}*/
-
-/* App.js */
-.App-header {
-  background-color: #222;
-  height: 50px;
-  padding: 5px;
-  color: #42eef4;
-  position: center;
-}
-
-.navbar-link {
-  mergin-left: 1rem;
-  float: right;
-}
-
-body {
-  background: black;
-}
-
-h1 {
-  text-align: left;
-  padding-top: 5px;
-  font-size: 25px;
-  display: inline-block;
+/* Landing*/
+.jumbotron {
+  background-image: url("data/audience-band-blur-518389.jpg");
+  background-size: cover;
+  position: auto;
+  height: 100%;
 }
 
 
-/* Landing.js */
-
-h1.hero-title {
-  text-align: center;
-  font-size: 50px;
-  color: #fff;
-  padding-left:150px;
-}
-
-.selling-points{
-  color: #fff;
-  text-align: center;
-  padding-top: 20px;
-}
-
-.point{
-  display: inline-block;
-  padding: 5px;
-  font-size: 16px;
-}
-
-.point-title{
-  font-size: 25px;
-  padding-bottom: 20px;
-}
-
-/* Library.js */
-
+/* Library.js*/
 .library {
-  width: 90%;
+  width: 85%;
+  padding: 0 1rem;
   margin: auto;
-  padding: 10px;
 }
 
 .album-link {
-  color: #fff;
+  position: relative;
   display: inline-block;
-  margin: 5px;
-  padding: 10px;
+  margin: 2.5rem;
+  padding: 0.1rem;
+  width: fit-content;
   text-align: center;
+  top: 0;
+  transition: top ease 0.2s;
+}
+
+.album-link img {
+  width: 20rem;
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.album-name {
+  font-weight: bolder;
+  font-size: 115%;
+  margin: auto;
+  width: fit-content;
+}
+
+.album-artist {
+  color: blue;
+  margin: auto;
+  width: fit-content;
+}
+
+@media screen and (max-width: 440px) { /* Mobile */
+  .library {
+    max-width: 100%;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .album-link {
+    padding: 0;
+    margin: 0.5rem auto;
+  }
+
+  .album-link img {
+    width: 100vw;
+  }
 }
 
 /* Album.js */
-
-.album {
-  white-space: nowrap;
-  overflow: scroll;
-}
-
-.album-details {
-  color: #fff;
-  text-align: left;
-  margin-top: 0px;
-  margin-left: 40px;
-  top: 5px;
-}
 
 .song {
   line-height: 3rem;
@@ -105,11 +88,17 @@ h1.hero-title {
 
 #song-list {
   width: 65%;
-  margin: auto;
-  padding: 10px;
   vertical-align: top;
-  color: #fff;
+  color: black;
   position: left;
+  margin-left: 10%;
+}
+
+#album-title {
+  text-align: left;
+  font-size: 30px;
+  margin-left: 10%;
+  margin-top: 5%;
 }
 
 .artist,#release-info {
@@ -117,28 +106,13 @@ h1.hero-title {
   font-weight: 400;
   margin: 0.5rem;
   font-size: 15px;
+  margin-left: 10%;
 }
 
 #album-cover-art {
-  display: inline-block;
-  position: relative;
-  width: 40%;
+  width: 100%;
   height: auto;
-  margin-top: 15px;
-  margin-left: 15px;
-}
-
-#container-right {
-  display:inline-block;
-  width: 60%;
-  padding: 3px;
-　height: 150px;
-  position: fixed;
-}
-
-#album-title {
-  text-align: left;
-  font-size: 30px;
+  margin-top: 35px;
 }
 
 /* Player Bar */
