@@ -28,7 +28,7 @@ class App extends Component {
             </div>
           </nav>
         </header>
-          <main className='bg-dark'>
+          <main>
             <nav className="navbar-header">
               <Route exact path="/" component={Landing} />
               <Route path="/library" component={Library} />

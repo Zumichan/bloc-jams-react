@@ -1,11 +1,31 @@
 /* Landing*/
 .jumbotron {
-  background-image: url("data/marcela-laskoski-118684-unsplash.jpg");
+  background: url("data/marcela-laskoski-118684-unsplash.jpg") center no-repeat;
   background-size: cover;
   position: auto;
   height: 100%;
 }
 
+.music-note {
+  height: 60px;
+  width: 60px;
+  margin-left: 100px;
+  margin-bottom: 20px;
+}
+
+.block-icon {
+  height: 60px;
+  width: 60px;
+  margin-left: 100px;
+  margin-bottom: 20px;
+}
+
+.mobile-icon {
+  height: 60px;
+  width: 60px;
+  margin-left: 100px;
+  margin-bottom: 20px;
+}
 
 /* Library.js*/
 .library {
@@ -27,54 +47,35 @@
 
 .album-link img {
   width: 20rem;
-  user-drag: none;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
 }
 
-.album-name {
-  font-weight: bolder;
+.album-title {
+  color: white;
   font-size: 115%;
   margin: auto;
   width: fit-content;
 }
 
 .album-artist {
-  color: blue;
+  color: white;
   margin: auto;
   width: fit-content;
 }
 
-@media screen and (max-width: 440px) { /* Mobile */
-  .library {
-    max-width: 100%;
-    text-align: center;
-    padding: 0;
-    margin: 0;
-  }
-
-  .album-link {
-    padding: 0;
-    margin: 0.5rem auto;
-  }
-
-  .album-link img {
-    width: 100vw;
-  }
+.album-length {
+  color: white;
+  margin: auto;
+  width: fit-content;
 }
 
 /* Album.js */
-
 .song {
   line-height: 3rem;
   cursor: pointer;
 }
 
 .song:hover {
-  background: #42eef4;
+  background: darkgray;
 }
 
 .song-actions {
@@ -95,6 +96,7 @@
 }
 
 #album-title {
+  color: white;
   text-align: left;
   font-size: 30px;
   margin-left: 10%;
@@ -116,7 +118,6 @@
 }
 
 /* Player Bar */
-
 input[type=range] {
   display: inline-block;
   background: transparent;
@@ -124,7 +125,7 @@ input[type=range] {
 
 .player-bar {
   color: white;
-  background: #42eef4;
+  background: darkslategray;
   position: fixed;
   text-align: center;
   left: 0;
