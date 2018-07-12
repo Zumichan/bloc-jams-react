@@ -9,29 +9,27 @@
 .music-note {
   height: 60px;
   width: 60px;
-  margin-left: 100px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .block-icon {
   height: 60px;
   width: 60px;
-  margin-left: 100px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .mobile-icon {
   height: 60px;
   width: 60px;
-  margin-left: 100px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 /* Library.js*/
 .library {
-  width: 85%;
-  padding: 0 1rem;
-  margin: auto;
+  text-align: center;
 }
 
 .album-link {
@@ -53,6 +51,7 @@
   color: white;
   font-size: 115%;
   margin: auto;
+  margin-top: 10px;
   width: fit-content;
 }
 
