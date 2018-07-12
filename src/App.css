@@ -74,7 +74,7 @@
 }
 
 .song:hover {
-  background: darkgray;
+  background:purple;
 }
 
 .song-actions {
@@ -116,6 +116,10 @@
   margin-top: 35px;
 }
 
+.album-info {
+  text-align: left;
+}
+
 /* Player Bar */
 input[type=range] {
   display: inline-block;
@@ -124,14 +128,13 @@ input[type=range] {
 
 .player-bar {
   color: white;
-  background: darkslategray;
-  position: fixed;
+  background: purple;
   text-align: center;
   left: 0;
   bottom: 0;
   height: 8rem;
   width: 100%;
-  overflow: hidden;
+  margin-top: 50px;
 }
 
 #buttons {
@@ -141,7 +144,6 @@ input[type=range] {
 
 .seek-bar {
   width: 50vw;
-  vertical-align: 0.15rem;
 }
 
 .current-time {
@@ -169,13 +171,11 @@ input[type=range] {
   display: inline-block;
   width: fit-content;
   margin: 0;
-  padding: 0;
+  padding: 10px;
 }
 
 #volume-control {
   display: inline-block;
-  position: fixed;
   width: fit-content;
-  height: 1rem;
-  right: 0;
+  margin: 0;
 }
