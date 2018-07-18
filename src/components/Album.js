@@ -124,7 +124,7 @@ class Album extends Component {
       <section className="container">
          <div className="row">
            <div className="col-md-4">
-             <img id="album-cover-art" src={this.state.album.albumCover} />
+             <img id="album-cover-art" src={this.state.album.albumCover} alt="album cover"/>
            </div>
            <div className="album-info col-md-8">
              <h1 id="album-title">{this.state.album.title}</h1>
